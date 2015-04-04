@@ -1,7 +1,7 @@
 require 'mechanize'
 module Hobos
 
-  class HoboAPI
+  class Api
     def initialize
       @browser = Browser.new.browser
     end

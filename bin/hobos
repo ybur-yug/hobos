@@ -5,5 +5,5 @@ uid = ARGV[0]
 
 api = Hobos::Api.new
 
-api.hobo uid
+puts api.hobo uid
 
