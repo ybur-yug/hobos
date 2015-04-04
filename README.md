@@ -6,7 +6,7 @@ A simple wrapper to return hobos.
 
 Fuck off and read a hobo name.
 
-Installatoin:
+## Installation:
 
 ```BASH
 git clone 'https://www.github.com/rhgraysonii/hobo_api.git'
