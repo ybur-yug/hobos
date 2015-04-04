@@ -16,14 +16,11 @@ gem install hobo_api.gem
 cd ..
 ```
 
-Add it to your Gemfile
+And now you can simply look them up by id or at random.
 
-`gem "hobo_api"`
-
-And now you can simply
-
-```RUBY
-api = Hobos::HoboAPI.new
-api.hobo 1
+```bash
+$ hobos
+#=> Big-Tipper Silas Fake-Nickel
+$ hobos 1
 # => 'Stewbuilder Dennis'
 ```
