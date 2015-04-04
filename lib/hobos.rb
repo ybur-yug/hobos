@@ -8,7 +8,11 @@ module Hobos
     end
 
     def hobo uid
-      clean_name(@browser.get("http://www.e-hobo.com/hoboes/#{uid}").at('span').children.last.to_s)
+      begin
+        clean_name(@browser.get("http://www.e-hobo.com/hoboes/#{uid}").at('span').children.last.to_s)
+      rescue
+        "{ 'error': { 'message': 'bad UID' } }"
+      end
     end
 
     private
@@ -32,3 +36,5 @@ module Hobos
 
 end
 
+api = Hobos::HoboAPI.new
+puts api.hobo 9999
