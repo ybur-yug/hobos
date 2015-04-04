@@ -9,11 +9,7 @@ Fuck off and read a hobo name.
 ## Installation:
 
 ```BASH
-git clone 'https://www.github.com/rhgraysonii/hobo_api.git'
-cd hobo_api
-gem build hobo_api.gemspec
-gem install hobo_api.gem
-cd ..
+gem install hobos
 ```
 
 And now you can simply look them up by id or at random.
