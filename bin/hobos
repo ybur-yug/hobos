@@ -1,9 +1,14 @@
 #!/usr/bin/env ruby
 
 require 'hobos'
-uid = ARGV[0]
 
 api = Hobos::Api.new
+if ARGV[0]
 
-puts api.hobo uid
+  puts api.hobo ARGV[0]
+else
+  puts api.hobo [1..700].to_a.sample
+end
+
+
 
