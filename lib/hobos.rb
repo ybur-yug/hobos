@@ -41,5 +41,5 @@ get '/hobos' do
   end
 
   api = Hobos::HoboAPI.new
-  api.hobo 2
+  api.hobo @params['uid']
 end
