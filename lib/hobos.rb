@@ -1,32 +1,34 @@
 require 'mechanize'
-require 'pry'
 
 module Hobos
-  class HoboAPI
-    attr_accessor :hobos
 
+  class HoboAPI
     def initialize
       @browser = Browser.new.browser
-      @hobos = @browser.get('http://www.e-hobo.com/hoboes/list/').links.map { |l| l if check_hobo l }
+    end
+
+    def hobo uid
+      clean_name(@browser.get("http://www.e-hobo.com/hoboes/#{uid}").at('span').children.last.to_s)
     end
 
     private
-    def check_hobo link
-      link.uri.to_s if link.uri.to_s.include? '/hoboes/'
+    def clean_name hobo_name
+      hobo_name.gsub!(/\d/, '')
+      hobo_name.gsub!('#', '')
+      hobo_name.gsub!(': ', '')
+      hobo_name
     end
   end
 
   class Browser
     attr_accessor :browser
-    attr_accessor :hobos
+    attr_accessor :hobos_list
 
     def initialize
       @browser = Mechanize.new
+      @hobos_list = @browser.get("http://www.e-hobo.com/hoboes/list/")
     end
   end
 
 end
 
-api = Hobos::HoboAPI.new
-hobos = api.hobos
-puts hobos
