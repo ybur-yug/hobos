@@ -1,4 +1,4 @@
-# Hobo API/Module
+# Hobos
 
 A simple wrapper to return hobos.
 
