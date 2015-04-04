@@ -18,7 +18,7 @@ cd ..
 
 Add it to your Gemfile
 
-`gem "hobo_api"
+`gem "hobo_api"`
 
 And now you can simply
 
