@@ -35,5 +35,3 @@ module Hobos
 
 end
 
-api = Hobos::HoboAPI.new
-api.hobo @params['uid']
