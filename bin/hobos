@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'hobos'
+uid = ARGV[0]
+
+api = Hobos::Api.new
+
+api.hobo uid
+
