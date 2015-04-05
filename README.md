@@ -12,7 +12,7 @@ Fuck off and read a hobo name.
 gem install hobos -v 0.0.5
 ```
 
-And now you can simply look them up by id or at random.
+And now...
 
 ```bash
 $ hobos
