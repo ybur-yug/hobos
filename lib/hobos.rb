@@ -7,14 +7,22 @@ module Hobos
     end
 
     def hobo uid
-      begin
-        clean_name(@browser.get("http://www.e-hobo.com/hoboes/#{uid}").at('span').children.last.to_s)
-      rescue
-        "{ 'error': { 'message': 'bad UID' } }"
-      end
+      clean_name(try_hobo(false))
     end
 
     private
+    def try_hobo found_hobo?
+      while !found_hobo?
+        resp = @browser.get("http://www.e-hobo.com/hoboes/#{uid}").at('span').children.last.to_s
+        if resp == "{ 'error': { 'message': 'bad UID' } }"
+          try_hobo false
+        else
+          found_hobo? = true
+        end
+      end
+      resp
+    end
+    
     def clean_name hobo_name
       hobo_name.gsub!(/\d/, '')
       hobo_name.gsub!('#', '')
