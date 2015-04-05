@@ -6,18 +6,18 @@ module Hobos
       @browser = Browser.new.browser
     end
 
-    def hobo uid
+    def hobo
       clean_name(try_hobo(false))
     end
 
     private
-    def try_hobo found_hobo?
-      while !found_hobo?
-        resp = @browser.get("http://www.e-hobo.com/hoboes/#{uid}").at('span').children.last.to_s
+    def try_hobo found_hobo
+      while !found_hobo
+        resp = @browser.get("http://www.e-hobo.com/hoboes/#{rand(1..700)}").at('span').children.last.to_s
         if resp == "{ 'error': { 'message': 'bad UID' } }"
           try_hobo false
         else
-          found_hobo? = true
+          found_hobo = true
         end
       end
       resp

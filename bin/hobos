@@ -4,21 +4,8 @@ require 'hobos'
 
 $api = Hobos::Api.new
 
-
-def try_hobo found_hobo
-  resp = $api.hobo rand(0..700)
-  while !found_hobo
-    if resp != "{ 'error': { 'message': 'bad UID' } }"
-      found_hobo = true
-    else
-      try_hobo(found_hobo)
-    end
-  end
-  puts resp
-end
-
 if ARGV[0]
   puts $api.hobo ARGV[0]
 else
-  try_hobo false
+  puts $api.hobo
 end
