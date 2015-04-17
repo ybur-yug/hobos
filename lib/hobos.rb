@@ -1,6 +1,6 @@
 require 'mechanize'
 module Hobos
-
+  HOBOS_URL = "http://www.e-hobo.com/hoboes/"
   class Api
     def initialize
       @browser = Browser.new.browser
@@ -10,11 +10,19 @@ module Hobos
       clean_name(try_hobo(false))
     end
 
+    def hobo_by_id id
+      begin
+        clean_name(@browser.get("#{HOBOS_URL}#{id}").at('span').children.last.to_s)
+      rescue
+        ''
+      end
+    end
+
     private
     def try_hobo found_hobo
-      while !found_hobo
-        resp = @browser.get("http://www.e-hobo.com/hoboes/#{rand(1..700)}").at('span').children.last.to_s
-        if resp == "{ 'error': { 'message': 'bad UID' } }"
+      unless found_hobo
+        resp = @browser.get("#{HOBOS_URL}#{rand(1..700)}").at('span').children.last.to_s
+        if resp == ""
           try_hobo false
         else
           found_hobo = true
@@ -37,9 +45,7 @@ module Hobos
 
     def initialize
       @browser = Mechanize.new
-      @hobos_list = @browser.get("http://www.e-hobo.com/hoboes/list/")
     end
   end
-
 end
 
