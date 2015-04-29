@@ -41,7 +41,6 @@ module Hobos
 
   class Browser
     attr_accessor :browser
-    attr_accessor :hobos_list
 
     def initialize
       @browser = Mechanize.new
