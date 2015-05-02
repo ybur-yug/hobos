@@ -9,7 +9,7 @@ Fuck off and read a hobo name.
 ## Installation:
 
 ```BASH
-gem install hobos -v 0.0.5
+gem install hobos
 ```
 
 And now...
