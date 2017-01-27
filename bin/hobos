@@ -2,10 +2,4 @@
 
 require 'hobos'
 
-$api = Hobos::Api.new
-
-if ARGV[0]
-  puts $api.hobo ARGV[0]
-else
-  puts $api.hobo
-end
+puts Hobos.hobo
