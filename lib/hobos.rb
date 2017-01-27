@@ -57,7 +57,6 @@ module Hobos
               "Irontrousers the Strong",
               "'X,' the Anonymous Man or Woman",
               "Orphaned Reynaldo, the Child with Haunting Eyes",
-              "#58])",
               "Reynaldo Reynaldoson, Who Will One Day Kill His Father",
               "Thoughtless Harry Hsu",
               "Clinical Psychiatrist Huga Rivera",

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hobos (0.0.8)
+    hobos (9001.0.0)
       mechanize
 
 GEM
@@ -61,7 +61,6 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.6)
   hobos!
-  mechanize
   pry
   rake
   rspec
