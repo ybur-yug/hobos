@@ -1,3 +1,3 @@
 module Hobos
-  VERSION = "0.0.8"
+  VERSION = "9001.0.0"
 end
